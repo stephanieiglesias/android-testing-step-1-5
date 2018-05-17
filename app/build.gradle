@@ -36,7 +36,7 @@ android {
 
     // Remove mockRelease as it's not needed.
     android.variantFilter { variant ->
-        if(variant.buildType.name.equals('release')
+        if (variant.buildType.name.equals('release')
                 && variant.getFlavors().get(0).name.equals('mock')) {
             variant.setIgnore(true);
         }
@@ -67,6 +67,7 @@ dependencies {
     implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.ext.espressoVersion"
 
     // Dependencies for local unit tests
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
     testImplementation "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
